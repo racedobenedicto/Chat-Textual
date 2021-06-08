@@ -42,9 +42,9 @@ public class MyServerSocket {
 
     public void close() {
         try {
-		    this.serverSocket.close();
-		} catch (IOException ex) { ex.printStackTrace(); }		
-	}	
+		this.serverSocket.close();
+	} catch (IOException ex) { ex.printStackTrace(); }		
+    }	
 	
 	public void setReceiveBufferSize(int size) {
 		try {
