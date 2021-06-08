@@ -28,11 +28,9 @@ public class MyServerSocket {
             this.serverSocket.bind(endpoint);
         } catch (IOException ex) { ex.printStackTrace(); }
     }
-
     //bind con backlog
 
     //accept que retorna Socket
-
     public MySocket accept() {
         MySocket socket = null;
         try {
@@ -46,46 +44,7 @@ public class MyServerSocket {
         try {
 		    this.serverSocket.close();
 		} catch (IOException ex) { ex.printStackTrace(); }		
-	}
-	
-	/*public void setSoTimeout(int timeout) {
-		try {
-		       this.serverSocket.setSoTimeout(timeout);
-		        }
-		    catch (IOException e) {
-		       System.out.println("Error setting the timeout: \n"+e);
-		    }
-	}*/
-	
-	/*public int getSoTimeout() {
-		try {
-		       return this.serverSocket.getSoTimeout();
-		        }
-		    catch (IOException e) {
-		       System.out.println("Error getting the timeout: \n"+e);
-		    }
-		return 0;
-	}*/
-	
-	/*public void setReuseAddress(boolean on) {
-		try {
-		       this.serverSocket.setReuseAddress(on);
-		        }
-		    catch (IOException e) {
-		       System.out.println("Error setting the reused address: \n"+e);
-		    }
-	}*/
-	
-	/*public boolean getReuseAddress() {
-		try {
-		       return this.serverSocket.getReuseAddress();
-		        }
-		    catch (IOException e) {
-		       System.out.println("Error getting the reused address: \n"+e);
-		    }
-		return false;
-	}*/
-	
+	}	
 	
 	public void setReceiveBufferSize(int size) {
 		try {
