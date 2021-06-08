@@ -17,15 +17,6 @@ public class MySocket {
         } catch (Exception ex) {}
     }
 
-    public MySocket(String host, int port, String nick) {
-        try {
-            this.socket = new Socket(host, port);
-            this.nick = nick;
-            //initialize text streams
-            this.initializeStreams();
-        } catch (Exception ex) {}
-    }
-
     public MySocket(Socket s) {
         this.socket = s;
         //initialize text streams
@@ -37,10 +28,6 @@ public class MySocket {
             this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.out = new PrintWriter(socket.getOutputStream(), true);
         } catch (Exception ex) {}
-    }
-
-    public Socket getSocket() {
-        return this.socket;
     }
 
     public String getNick() {
@@ -59,20 +46,8 @@ public class MySocket {
         return this.out;
     }
 
-    public int getLocalPort() {
-        return this.socket.getLocalPort();
-    }
-
-    public SocketAddress getRemoteSocketAddress() {
-        return this.socket.getRemoteSocketAddress();
-    }
-
     public void flush() {
         this.out.flush();
-    }
-
-    public int getPort() {
-        return this.socket.getPort();
     }
 
     public void close() {
@@ -105,27 +80,8 @@ public class MySocket {
         return s;
     }
 
-    public void writeLine(String s) {
-        this.out.write(s);
-    }
-
     public void println(String s) {
         this.out.println(s);
-    }
-
-    public void sendNick() {
-        //this.writeLine(this.nick);
-        this.out.println(this.nick);
-        System.out.println("NICK SENT: " + this.nick);
-    }
-
-    public String receiveNick() {
-        return this.readLine();
-    }
-
-    public String setNick() {
-        this.nick = this.readLine();
-        return this.nick;
     }
 
     public void closeIn(){
