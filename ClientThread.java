@@ -23,10 +23,6 @@ public class ClientThread implements Runnable {
 
     @Override
     public void run() {
-        /* TO KNOW WHICH PORT ARE WE CONNECTED TO
-         System.out.println("Local Port : " + mysocket.getLocalPort());
-         System.out.println("Servidor = " + mysocket.getRemoteSocketAddress() + ":" + mysocket.getPort());
-        */
         try {
             socket.flush();
             Thread thInput=new Thread(){
